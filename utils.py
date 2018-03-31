@@ -2,7 +2,6 @@ import re
 import os
 import string
 from collections import defaultdict
-from six.moves import cPickle
 
 import numpy as np
 from nltk.data import load
@@ -87,7 +86,7 @@ def process_vi(text, processors=[normalize_text, lowercase, remove_punctuation, 
     return text
 
 
-def read_data_file(file_path, word_embeding_dim=100, mode='tc'):
+def read_data_file(file_path):
     revs = []
     revs_idx = []
     revs_content = []
@@ -97,8 +96,9 @@ def read_data_file(file_path, word_embeding_dim=100, mode='tc'):
 
     with open(file_path, encoding='utf-8') as f:
         for line in f.readlines():
+            line = re.sub('\n', '', line)
             line = line.split('\t')
-     
+
             idx, senti, tar, content = int(line[0]), int(line[1]), line[2], line[3]
             
             if idx not in revs_idx:
@@ -111,44 +111,79 @@ def read_data_file(file_path, word_embeding_dim=100, mode='tc'):
                 count_negative += 1
 
             revs.append((senti, tar, content))
-            
-    vocab = create_vocab(revs_content)
+
+    print("Positive: {0}".format(count_positive))
+    print("Negative: {0}".format(count_negative))
+
+    return revs, revs_content
+
+def creat_word_embedding(revs, word_embeding_dim=100):
+    vocab = create_vocab(revs)
     word_idx_map = create_word_idx_map(vocab)
-    wv = create_word_vec([rev.split() for rev in revs_content], dim=word_embeding_dim)
+    wv = create_word_vec([rev.split() for rev in revs], dim=word_embeding_dim)
     add_unknown_words(wv, vocab, dim=word_embeding_dim)
     word_embeding = get_w2v_mat(wv, dim=word_embeding_dim)
+    return word_idx_map, word_embeding
 
-    left_x, left_x_len, right_x, right_x_len, target_words = [], [], [], [], []
+
+def data_parse_for_lstm(revs, word_idx_map, max_len):
+    x = []
+    for rev in revs:
+        _, tar, content = rev
+        content = content.split()
+        content[content.index('$t$')] = tar 
+        x.append(list(map(lambda w: word_idx_map.get(w, 0), content)))
+    y = label_parse([rev[0] for rev in revs])
+    sen_len = [len(sen) for sen in x]
+    
+    for i in range(len(x)):
+        if len(x[i]) < max_len:
+            x[i] += [0] * (max_len - len(x[i]))
+        else:
+            x[i] = x[i][0:max_len]
+    return np.asarray(x), np.asarray(sen_len), y
+
+
+def data_parse(revs, word_idx_map, max_len):
+    x_fw, x_bw, target_words = [], [], []
     for rev in revs:
         senti, tar, content = rev
         content = content.split()
+
         tar_idx = content.index('$t$')
-        target_words.append([tar_idx])
-        content[tar_idx] = tar
 
-        left = list(map(lambda w: word_idx_map.get(w, 0), content[0:tar_idx + 1]))
-        left_x.append(left)
-        left_x_len.append(len(left))
+        fw = list(map(lambda w: word_idx_map.get(w, 0), content[0:tar_idx]))
+        x_fw.append(fw)
+    
+        bw = list(map(lambda w: word_idx_map.get(w, 0), content[tar_idx + 1:]))
+        bw.reverse()
+        x_bw.append(bw)
 
-        right = list(map(lambda w: word_idx_map.get(w, 0), content[tar_idx:]))
-        right.reverse()
-        right_x.append(right)
-        right_x_len.append(len(right))
+        target_words.append([word_idx_map.get(tar, 0)])
+    y = label_parse([rev[0] for rev in revs])    
+    x_fw, len_fw = input_parse(max_len, x_fw, target_words)
+    x_bw, len_bw = input_parse(max_len, x_bw, target_words)
+    target_words = tar_word_parse(target_words)
+    return x_fw, len_fw, x_bw, len_bw, target_words, y
 
-    max_len = max([max(left_x_len), max(right_x_len)])
-    for i in range(len(revs)):
-        left_x[i] = left_x[i] + [0] * (max_len - len(left_x[i]))
-        right_x[i] = right_x[i]  + [0] * (max_len - len(right_x[i]))
 
-    y = np.zeros((len(revs), 2))
-    for i in range(len(revs)):
-        if revs[i][0] == -1:
-            y[i] = np.asarray([1, 0])
+def input_parse(max_len, X, target_words):    
+    X = [x + tar for x, tar in zip(X, target_words)]    
+    len_x = [len(x) if len(x) < max_len else max_len for x in X]
+    for i in range(len(X)):
+        if len(X[i]) > max_len:
+            X[i] = X[i][len(X[i]) - max_len:]
         else:
-            y[i] = np.asarray([0, 1])
-    print("Positive: {0}".format(count_positive))
-    print("Negative: {0}".format(count_negative))
-    return word_idx_map, max_len, word_embeding, np.asarray(left_x), np.asarray(left_x_len), np.asarray(right_x), np.asarray(right_x_len), y, np.asarray(target_words)
+            X[i] += [0] * (max_len - len(X[i]))        
+    return  np.asarray(X), np.asarray(len_x)
+
+
+def label_parse(y):
+    return np.asarray([[1, 0] if yi == -1 else [0, 1] for yi in y])
+
+
+def tar_word_parse(target_words):
+    return np.asarray(target_words)
 
 
 def batch_index(length, batch_size, n_iter=100, is_shuffle=True):
@@ -158,12 +193,3 @@ def batch_index(length, batch_size, n_iter=100, is_shuffle=True):
             np.random.shuffle(index)
         for i in range(int(length / batch_size) + (1 if length % batch_size else 0)):
             yield index[i * batch_size:(i + 1) * batch_size]
-
-
-
-def main():
-    pass
-
-
-if __name__ == '__main__':
-    main()

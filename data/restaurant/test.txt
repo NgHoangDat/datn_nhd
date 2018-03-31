@@ -1,0 +1,592 @@
+1	-1	customer_service	i was here a few weeks back and we had the worst $t$ experience at a restaurant ever
+2	1	place	went on a 3 day oyster binge with fish bringing up the closing and i am so glad this was the $t$ it o trip ended because it was so great
+3	-1	maitre_d	took my mom for mother s day and the $t$ was pretty rude
+4	1	vibe	the $t$ is very relaxed and cozy service was great and the food was excellent
+4	1	service	the vibe is very relaxed and cozy $t$ was great and the food was excellent
+4	1	food	the vibe is very relaxed and cozy service was great and the $t$ was excellent
+5	1	table	if the weather is nice try to snag an outside $t$
+6	1	quality	if you are looking for a good $t$ cheap eats this is the place
+7	1	service	the $t$ was friendly and the atmosphere was casual
+7	1	atmosphere	the service was friendly and the $t$ was casual
+8	1	pad_see_ew	i recommend their $t$ pork chops or tofu plates
+9	1	pork_chops	i recommend their pad see ew $t$ or tofu plates
+10	1	tofu_plates	i recommend their pad see ew pork chops or $t$
+11	1	taste	never in my life did i think that i could be satisfied both in $t$ and in quantity for 3 00 in nyc
+11	1	quantity	never in my life did i think that i could be satisfied both in taste and in $t$ for 3 00 in nyc
+12	1	food	this is the best secret place in midtown i heard that from the bartender after having brilliant $t$ try steak with portobello mushrooms and drinks on the bar last tuesday
+12	1	drinks	this is the best secret place in midtown i heard that from the bartender after having brilliant food try steak with portobello mushrooms and $t$ on the bar last tuesday
+13	1	steak_with_portobello_mushrooms	this is the best secret place in midtown i heard that from the bartender after having brilliant food try $t$ and drinks on the bar last tuesday
+14	1	service	the $t$ was excellent friendly and attentive
+15	1	main_course	the $t$ had an average portion and was decent overall
+16	-1	reservation	20 minutes for our $t$ but it gave us time to have a few cocktails and enjoy our surroundings and each other
+16	1	cocktails	20 minutes for our reservation but it gave us time to have a few $t$ and enjoy our surroundings and each other
+16	1	surroundings	20 minutes for our reservation but it gave us time to have a few cocktails and enjoy our $t$ and each other
+17	1	waitstaff	$t$ is great very attentive
+18	1	dinner_menu	the $t$ is diverse and top notch as well
+19	1	cuisine	it is what modern $t$ is all about
+20	1	indian_food	i do n t like $t$ too much and this was delicious however you want to factor that into the equation
+21	1	dishes	at taj vegetarians can rejoice all the $t$ are manna from heaven
+22	-1	wait	forget the rush and the $t$ and the noise which is n t actually that bad i mean please who goes to a steakhouse to be coddled and romantic
+22	-1	noise	forget the rush and the wait and the $t$ which is n t actually that bad i mean please who goes to a steakhouse to be coddled and romantic
+22	-1	rush	forget the $t$ and the wait and the noise which is n t actually that bad i mean please who goes to a steakhouse to be coddled and romantic
+23	-1	bill	i wo n t go back unless someone else is footing the $t$
+24	1	spot	jimmy s is hands down the hottest night $t$ in the bronx
+25	-1	service	and i would have to agree with the masses in terms of $t$ delivery is their achilles heel
+25	-1	delivery	and i would have to agree with the masses in terms of service $t$ is their achilles heel
+26	-1	bill	the 300 $t$ was a bit steep but the experience was great
+27	1	bar	nice ambiance nice little $t$ good bartender francois and good service
+27	1	bartender	nice ambiance nice little bar good $t$ francois and good service
+27	1	service	nice ambiance nice little bar good bartender francois and good $t$
+27	1	ambiance	nice $t$ nice little bar good bartender francois and good service
+28	1	calamari	the $t$ comes with an incredible sauce and the duck noodles are yummy as well
+28	1	sauce	the calamari comes with an incredible $t$ and the duck noodles are yummy as well
+29	1	duck_noodles	the calamari comes with an incredible sauce and the $t$ are yummy as well
+30	1	martinis	i would definitely go back if only for some of those exotic $t$ on the blackboard
+31	1	comfort_food	simple $t$ and what hot and lage portions
+32	1	portions	simple comfort food and what hot and lage $t$
+33	-1	rolls	stay away from the two specialty $t$ on the menu though too much avocado and rice will fill you up right quick
+33	-1	avocado	stay away from the two specialty rolls on the menu though too much $t$ and rice will fill you up right quick
+33	-1	rice	stay away from the two specialty rolls on the menu though too much avocado and $t$ will fill you up right quick
+34	-1	drink_refills	we did n t get $t$ and she did n t even offer us the option of dessert
+35	1	bagels	the $t$ are also reasonably priced for nyc
+35	1	priced	the bagels are also reasonably $t$ for nyc
+36	1	business_dinner	if you can handle that it s a great place for a $t$ fun with friends or simply a table for 2
+37	1	table	if you can handle that it s a great place for a business dinner fun with friends or simply a $t$ for 2
+38	-1	decor	$t$ leaves something to be desired
+39	1	waiter	our $t$ was fine the place looks nice in that not trying too hard way but at those prices a little more should be expected of your food
+39	1	place	our waiter was fine the $t$ looks nice in that not trying too hard way but at those prices a little more should be expected of your food
+39	-1	prices	our waiter was fine the place looks nice in that not trying too hard way but at those $t$ a little more should be expected of your food
+39	-1	food	our waiter was fine the place looks nice in that not trying too hard way but at those prices a little more should be expected of your $t$
+40	1	toppings	coming from boston this place is like emma s pizza in kendall square in cambridge although they have more funky $t$
+41	1	place	when my husband and go there we spend 60 00 have lobster tails ummmmm need i say more i ca n t say any more it a $t$ you ll never forget if you never go you ll miss a meal of your life time
+41	1	meal	when my husband and go there we spend 60 00 have lobster tails ummmmm need i say more i ca n t say any more it a place you ll never forget if you never go you ll miss a $t$ of your life time
+42	1	lobster_tails	when my husband and go there we spend 60 00 have $t$ ummmmm need i say more i ca n t say any more it a place you ll never forget if you never go you ll miss a meal of your life time
+43	1	espresso_cup_filled_with_chocolate_mousse	in an effort to increase turnover the restaurant offers no desserts beyond the complimentary $t$
+44	-1	desserts	in an effort to increase turnover the restaurant offers no $t$ beyond the complimentary espresso cup filled with chocolate mousse
+45	1	pho	i ve been to this restaurant more than a dozen times and when i m craving for $t$ lemon grass chicken or beef cube on rice this is the place to go
+46	1	lemon_grass_chicken	i ve been to this restaurant more than a dozen times and when i m craving for pho $t$ or beef cube on rice this is the place to go
+47	1	beef_cube_on_rice	i ve been to this restaurant more than a dozen times and when i m craving for pho lemon grass chicken or $t$ this is the place to go
+48	1	portraits	oh yes and if you are a fan of indian oldies film stars there are plenty of $t$ of indian actors and actresses in classic black white that adorn the walls some of which i would love to know where they obtained
+49	1	food	the $t$ is spectacular from the appitizers to the main course and then of course the desserts wow you ll need no more
+49	1	appitizers	the food is spectacular from the $t$ to the main course and then of course the desserts wow you ll need no more
+49	1	desserts	the food is spectacular from the appitizers to the main course and then of course the $t$ wow you ll need no more
+50	1	main_course	the food is spectacular from the appitizers to the $t$ and then of course the desserts wow you ll need no more
+51	1	fish	my $t$ was delicious in an incredible curry sauce
+52	1	curry_sauce	my fish was delicious in an incredible $t$
+53	1	deli	if you are in search of the most authentic nyc $t$ experience look no further than the famous and historic katz s deli down on the lower east side
+54	1	pork_buns	even upon delivery their juicy $t$ are quite good
+55	1	thai_food	average to good $t$ but terrible delivery
+56	-1	delivery	average to good thai food but terrible $t$
+57	1	space	the $t$ is nice but when we order our drink we were in for a surprise
+57	-1	drink	the space is nice but when we order our $t$ we were in for a surprise
+58	-1	place	the entire $t$ and the treatment we received felt as a conveyor belt
+59	1	slice	joe s pizza used to have the best $t$ until this pizzeria opened up
+60	1	dessert	and they provided a delicious $t$ on the house
+61	-1	reservation	they are still living in the dark ages and do not have an answering machine so if you want to make a $t$ you are limited
+62	1	food	the $t$ is amazing rich pastas and fresh doughy pizza
+62	1	pastas	the food is amazing rich $t$ and fresh doughy pizza
+62	1	pizza	the food is amazing rich pastas and fresh doughy $t$
+63	1	food	$t$ was very good but not what i would consider out of this world
+64	1	lobster_bisque	i had $t$ it has 2 oz of maine lobster in it
+65	1	maine_lobster	i had lobster bisque it has 2 oz of $t$ in it
+66	1	pad_thai	try the $t$ it s fabulous and their prices are so cheap
+67	1	prices	try the pad thai it s fabulous and their $t$ are so cheap
+68	1	food	$t$ is great and inexpensive
+69	1	price	the $t$ very reasonable
+70	1	dessert	$t$ ca n t be missed so save room
+71	1	food	it can be a little confusing as to where one goes to order but once the $t$ is ordered you are in for a treat
+72	1	ingredients	$t$ are organic which is a real plus for me
+73	-1	food	it was so bad i actually refused to pay for my $t$
+74	1	cuisine	i recommend this spot to anyone who enjoys fine $t$ at reasonable prices
+74	1	prices	i recommend this spot to anyone who enjoys fine cuisine at reasonable $t$
+75	1	staff	the $t$ was very attentive the ambience lovely and the food superb
+75	1	ambience	the staff was very attentive the $t$ lovely and the food superb
+75	1	food	the staff was very attentive the ambience lovely and the $t$ superb
+76	1	ingrediants	i love when restaurants think using fancy expensive $t$ makes the food fine cuisine even with no idea how to use them
+76	1	cuisine	i love when restaurants think using fancy expensive ingrediants makes the food fine $t$ even with no idea how to use them
+76	1	food	i love when restaurants think using fancy expensive ingrediants makes the $t$ fine cuisine even with no idea how to use them
+77	1	pizza	the $t$ and wine were excellent the service too but what really made this place was the backyard dining area
+77	1	wine	the pizza and $t$ were excellent the service too but what really made this place was the backyard dining area
+77	1	service	the pizza and wine were excellent the $t$ too but what really made this place was the backyard dining area
+78	1	backyard_dining_area	the pizza and wine were excellent the service too but what really made this place was the $t$
+79	1	waiters	the $t$ are sweet the food is tasty and the bill is never too large
+79	1	food	the waiters are sweet the $t$ is tasty and the bill is never too large
+79	1	bill	the waiters are sweet the food is tasty and the $t$ is never too large
+80	1	service	the $t$ was superb they treat you like family
+81	1	menu	we all had the tasting $t$ and unlike some of the other reviews i felt there was more than enough food
+81	1	food	we all had the tasting menu and unlike some of the other reviews i felt there was more than enough $t$
+82	1	table	it only took about five or so minutes to get an empty $t$ but standing up was n t too bad
+83	-1	menu	the $t$ may be small but everything on it is delicious
+84	-1	rice	they had scrapped the bottom of the vessel in which they make the $t$ result we had large chunks of burnt rice in our serving bowl
+84	-1	rice	they had scrapped the bottom of the vessel in which they make the rice result we had large chunks of burnt $t$ in our serving bowl
+85	-1	chocolate_cake	for dessert we split $t$ and vanilla gelato with espresso which were tasty but i thought a bit overpriced
+86	-1	vanilla_gelato_with_espresso	for dessert we split chocolate cake and $t$ which were tasty but i thought a bit overpriced
+87	-1	dessert	for $t$ we split chocolate cake and vanilla gelato with espresso which were tasty but i thought a bit overpriced
+88	1	surroundings	warm comfortable $t$ nice appointments witness the etched glass and brickwork separating the dining rooms
+89	1	table	we ran a little late for the reservation but it was n t a problem to get our $t$ immediately
+90	1	reservation	we arrived on time for our $t$ and seated promptly the
+91	1	staff	the well mannered pleasant $t$ that tony has in his employ
+92	1	flavors	the $t$ robust and subtle
+93	1	oysters	all i can say is 2 pints during happy hour and the some of the cheapest $t$ you ll find in the city though the quality is some of the best
+93	1	quality	all i can say is 2 pints during happy hour and the some of the cheapest oysters you ll find in the city though the $t$ is some of the best
+94	1	tiramisu_chocolate_cake	we concluded with $t$ both were delicious
+95	-1	counter_service	the $t$ is bad
+96	1	service	$t$ here was great food was fantastic
+96	1	food	service here was great $t$ was fantastic
+97	1	place	this is such a lovely peaceful $t$ to eat outside
+98	1	sauce	the $t$ is delicious and the crust is perfect
+98	1	crust	the sauce is delicious and the $t$ is perfect
+99	-1	decore	you will pay a lot for the $t$ but the food is no better or worse than a lot of other chinese and asian fusion places in ny
+100	1	entrees	they have some great $t$ here as well
+101	1	food	the $t$ served in small tasting portions as an option is very good with each dish being better than the next
+101	1	portions	the food served in small tasting $t$ as an option is very good with each dish being better than the next
+101	1	dish	the food served in small tasting portions as an option is very good with each $t$ being better than the next
+102	1	cater	they do $t$ to american palates but if you like it hot let them know and they are more than willing to oblige
+103	1	mango_chicken	i had the $t$ and i ca n t go on to tell you how delicious that was and the presentation was beatiful
+104	1	presentation	i had the mango chicken and i ca n t go on to tell you how delicious that was and the $t$ was beatiful
+105	-1	drinks	oh but wait we were out of $t$ which were also delightfully overpriced
+106	1	service	the $t$ is fantastic
+107	1	garlic_mashed_potatoes	the $t$ are hands down the best in the city
+108	-1	lamb_meat	the $t$ was under cooked and extrmely chewy
+109	1	pad_thai	the best $t$ i ve ever had
+110	-1	food_quality	over time the $t$ has decreased substantially it is a lot less crowded than it used to and the service must definitely be part of the reason
+111	-1	service	over time the food quality has decreased substantially it is a lot less crowded than it used to and the $t$ must definitely be part of the reason
+112	1	pizza	great $t$ and fantastic service
+112	1	service	great pizza and fantastic $t$
+113	-1	waiter	we were seated outside and the $t$ spilled red wine and hot tea on myself and my date
+114	-1	oil	i would just ask for no $t$ next time
+115	1	place	while this is a pretty $t$ in that overly cute french way the food was insultingly horrible
+115	-1	food	while this is a pretty place in that overly cute french way the $t$ was insultingly horrible
+116	-1	wine_list	the $t$ is n t great and the desserts are shipped in from bruno s down the street which is not as good as it used to be
+117	-1	desserts	the wine list is n t great and the $t$ are shipped in from bruno s down the street which is not as good as it used to be
+118	1	coffee	their $t$ is quite good too
+119	1	wine_list	great $t$ italian good food service was initially fine
+120	1	food	great wine list italian good $t$ service was initially fine
+120	-1	service	great wine list italian good food $t$ was initially fine
+121	1	space	despite the fact that the $t$ is large they ve overcrowded the floor with tables
+121	-1	tables	despite the fact that the space is large they ve overcrowded the floor with $t$
+122	-1	service	as far as the $t$ goes the waitresses were not particularly friendly but they got the job done
+122	-1	waitresses	as far as the service goes the $t$ were not particularly friendly but they got the job done
+123	-1	place	they are not helpful in the least and will give you the grand run around so by the time the event date rolls around you will not only regret chosing this $t$ but also become hostile
+124	1	taxan	$t$ delicious
+125	-1	sandwiches	unlike other places in nyc where the $t$ you want only come as a triple decker here you can get what you want in a reasonably sized portion and price
+125	1	price	unlike other places in nyc where the sandwiches you want only come as a triple decker here you can get what you want in a reasonably sized portion and $t$
+125	1	portion	unlike other places in nyc where the sandwiches you want only come as a triple decker here you can get what you want in a reasonably sized $t$ and price
+126	1	place	restaurant snobs need not bother this is a small neighborhood kind of $t$
+127	-1	salad	they could n t even make a $t$ that was appealing
+128	1	sushi	killer $t$
+129	1	food	of course the reason its so packed is because the $t$ is so delicious
+130	-1	staffs	$t$ are not that friendly but the taste covers all
+130	1	taste	staffs are not that friendly but the $t$ covers all
+131	1	jukebox	the $t$ plays everything from italian opera to the strokes
+132	1	martini	plus they made a perfect $t$
+133	1	waiter	the $t$ was attentive
+134	1	margarita	their $t$ is best i ve had since i ve returned from naples
+135	1	tastes	the $t$ makes your mouth water for more
+136	1	sake_list	their $t$ was extensive but we were looking for purple haze which was n t listed but made for us upon request
+137	-1	purple_haze	their sake list was extensive but we were looking for $t$ which was n t listed but made for us upon request
+138	-1	tables	the $t$ are crammed way too close the menu is typical of any italian restaurant and the wine list is simply overpriced
+139	-1	wine_list	the tables are crammed way too close the menu is typical of any italian restaurant and the $t$ is simply overpriced
+140	-1	food	the $t$ was actually aweful
+141	1	appetizer	they are served with a free $t$ and the portions are perfect for lunch
+141	1	portions	they are served with a free appetizer and the $t$ are perfect for lunch
+142	1	space	there is actually $t$ to breathe and the decor sets the tone for an intimate dinner
+142	1	decor	there is actually space to breathe and the $t$ sets the tone for an intimate dinner
+143	1	service	we went around 9 30 on a friday and it had died down a bit by then so the $t$ was great
+144	-1	rice	furthermore the $t$ had no seasoning so the sushi was bland and disgusting
+144	-1	sushi	furthermore the rice had no seasoning so the $t$ was bland and disgusting
+144	-1	seasoning	furthermore the rice had no $t$ so the sushi was bland and disgusting
+145	1	sushi	this place has realy fresh $t$ and a nice large menu of japanese classic cuisine
+145	1	menu	this place has realy fresh sushi and a nice large $t$ of japanese classic cuisine
+146	1	japanese_classic_cuisine	this place has realy fresh sushi and a nice large menu of $t$
+147	1	spinach	my wife and i also enjoyed the $t$ the shanghai low mein and other attractions
+148	1	shanghai_low_mein	my wife and i also enjoyed the spinach the $t$ and other attractions
+149	1	service	turned out there was full $t$ upstairs and sat down
+150	1	dumpling	if you have a $t$ fetish i suggest you try some here
+151	1	wine_menu	three page $t$ one page entree and horedevous
+152	1	entree	three page wine menu one page $t$ and horedevous
+152	1	horedevous	three page wine menu one page entree and $t$
+153	1	food	the $t$ is consistently wonderful i ve been coming here for years and the owner has always been accomodating and friendly
+153	1	owner	the food is consistently wonderful i ve been coming here for years and the $t$ has always been accomodating and friendly
+154	-1	waiters	the $t$ and owners were nonchalant about this and promised to call the exterminator but were n t as dismayed or apologetic as i would have expected
+154	-1	owners	the waiters and $t$ were nonchalant about this and promised to call the exterminator but were n t as dismayed or apologetic as i would have expected
+155	1	food	and the $t$ was fantastic
+156	1	hong_kong_styled_milk	if you re looking for a place to sit down have a drink and conversations with friends go to sweet n tart and order yourself a $t$ and tea with tapioca pearls hot
+157	1	tea_with_tapioca_pearls_hot	if you re looking for a place to sit down have a drink and conversations with friends go to sweet n tart and order yourself a hong kong styled milk and $t$
+158	1	owner	they re also friendlier here especially the $t$ kenny
+159	-1	room	while the $t$ is not particularly comfortable once you re seated you ll forget about everything except what s on your plate
+159	1	plate	while the room is not particularly comfortable once you re seated you ll forget about everything except what s on your $t$
+160	-1	waterbugs	i ve lived in nyc all my life and had never before seen so many $t$ in one place except in a really bad dream
+161	1	crew	winnie and her staff are the best $t$ you can find serving you
+161	1	staff	winnie and her $t$ are the best crew you can find serving you
+161	1	serving	winnie and her staff are the best crew you can find $t$ you
+162	1	ambiance	the $t$ is minimal the food is not phenomenal but some dishes are quite good such as the eggplant parmesan veal in carozza chicken saltimbocca
+162	-1	food	the ambiance is minimal the $t$ is not phenomenal but some dishes are quite good such as the eggplant parmesan veal in carozza chicken saltimbocca
+162	1	dishes	the ambiance is minimal the food is not phenomenal but some $t$ are quite good such as the eggplant parmesan veal in carozza chicken saltimbocca
+163	1	eggplant_parmesan	the ambiance is minimal the food is not phenomenal but some dishes are quite good such as the $t$ veal in carozza chicken saltimbocca
+164	1	veal_in_carozza_chicken_saltimbocca	the ambiance is minimal the food is not phenomenal but some dishes are quite good such as the eggplant parmesan $t$
+165	1	chutneys	you can even get packages of the $t$ to stock your fridge
+166	1	bar	the $t$ has various selections and the mixed drink special is a catcher 2 for 1 s
+167	1	mixed_drink_special	the bar has various selections and the $t$ is a catcher 2 for 1 s
+168	1	food	if it is n t for the $t$ a it must be the service or the ambience
+168	1	service	if it is n t for the food a it must be the $t$ or the ambience
+168	1	ambience	if it is n t for the food a it must be the service or the $t$
+169	-1	chef	during the course of the past 3 months the $t$ and staff changed and it was not for the better
+169	-1	staff	during the course of the past 3 months the chef and $t$ changed and it was not for the better
+170	1	ambience	i like the $t$ it s very dark and original
+171	-1	money	overall not worth the $t$
+172	-1	prices	this place is not worth the $t$
+173	1	bagels	pick a bagel has the best $t$ in the city
+174	-1	atmosphere	you are paying for the $t$ which is nice but can be had in numerous places in bay ridge
+175	-1	waiting_area	yes you have to wait to be seated and because its small there is no $t$ and the seat at the bar was all taken
+176	-1	seat	yes you have to wait to be seated and because its small there is no waiting area and the $t$ at the bar was all taken
+176	-1	wait	yes you have to $t$ to be seated and because its small there is no waiting area and the seat at the bar was all taken
+177	-1	food	the last two times i ordered from here my $t$ was soo spicy that i could barely eat it and the spice took away from the flavor of the dish
+177	-1	flavor	the last two times i ordered from here my food was soo spicy that i could barely eat it and the spice took away from the $t$ of the dish
+177	-1	dish	the last two times i ordered from here my food was soo spicy that i could barely eat it and the spice took away from the flavor of the $t$
+177	-1	spice	the last two times i ordered from here my food was soo spicy that i could barely eat it and the $t$ took away from the flavor of the dish
+178	1	fried_dumplings	the $t$ are great
+179	1	bbq_ribs	this place has the best chinese style $t$ in the city
+180	-1	decor	the $t$ is very simple but comfortable
+181	1	pelligrino	we figured we never had argentinian pizza before so we grabbed our lunch there sharing a large $t$ a pizza of two of their specials one was goat cheese the other blue cheese and both were excellent
+181	1	pizza	we figured we never had argentinian pizza before so we grabbed our lunch there sharing a large pelligrino a $t$ of two of their specials one was goat cheese the other blue cheese and both were excellent
+182	1	goat_cheese	we figured we never had argentinian pizza before so we grabbed our lunch there sharing a large pelligrino a pizza of two of their specials one was $t$ the other blue cheese and both were excellent
+183	1	blue_cheese	we figured we never had argentinian pizza before so we grabbed our lunch there sharing a large pelligrino a pizza of two of their specials one was goat cheese the other $t$ and both were excellent
+184	1	kamasutra	the $t$ and bombay cosmopolitan are excellent and will have you tipsy in no time
+185	1	bombay_cosmopolitan	the kamasutra and $t$ are excellent and will have you tipsy in no time
+186	1	date_spot	this is the perfect $t$ for williamsburg couples
+187	1	food	6 and there is much tasty $t$ all of it fresh and continually refilled
+188	1	food	just straight up cheap good $t$
+189	-1	cost	even with a relatively inexpensive botle of wine if you can call 70 00 inexpensive the $t$ is through the roof for better than average fare
+190	-1	botle_of_wine	even with a relatively inexpensive $t$ if you can call 70 00 inexpensive the cost is through the roof for better than average fare
+191	-1	service	$t$ was slow but the people were friendly
+191	1	people	service was slow but the $t$ were friendly
+192	-1	steak	the $t$ was very fatty and the sauce was overpowering and not very tasty
+192	-1	sauce	the steak was very fatty and the $t$ was overpowering and not very tasty
+193	1	staff	the $t$ makes you feel at home the food is great and the atmosphere is wonderful
+193	1	food	the staff makes you feel at home the $t$ is great and the atmosphere is wonderful
+193	1	atmosphere	the staff makes you feel at home the food is great and the $t$ is wonderful
+194	-1	food	the $t$ is alright some stuff is good some is not like the steak dish which tends to be dry
+195	-1	steak_dish	the food is alright some stuff is good some is not like the $t$ which tends to be dry
+196	1	menu	they have a very diverse $t$ so its something for everybody
+197	-1	staff	the $t$ was too busy ordering sushi for dinner and then laying it out to eat on the bar to even bring me my check
+198	1	food_spot	as a long time patron of mamoun s i always figured that i had found the best late night $t$ in the city
+199	1	tuna	get the $t$ of gari
+200	1	somosas	i like the $t$ chai and the chole but the dhosas and dhal were kinda dissapointing
+200	1	chai	i like the somosas $t$ and the chole but the dhosas and dhal were kinda dissapointing
+200	1	chole	i like the somosas chai and the $t$ but the dhosas and dhal were kinda dissapointing
+200	-1	dhosas	i like the somosas chai and the chole but the $t$ and dhal were kinda dissapointing
+200	-1	dhal	i like the somosas chai and the chole but the dhosas and $t$ were kinda dissapointing
+201	-1	prices	edible but really a ripoff at those $t$ given whats in the area
+202	-1	staff	the $t$ has been nice but they seemed really stressed and the unisex bathroom needs to be cleaned more often
+202	-1	bathroom	the staff has been nice but they seemed really stressed and the unisex $t$ needs to be cleaned more often
+203	1	service	the $t$ was the only thing good about this restaurant
+204	1	service	$t$ friendly and attentive
+205	-1	service	$t$ was very prompt but slightly rushed
+206	1	food	great $t$ great decor great service
+206	1	decor	great food great $t$ great service
+206	1	service	great food great decor great $t$
+207	1	dining	i ve dined at alain ducasse s restaurant in monte carlo for half the price for the same excellent $t$ experience
+207	1	price	i ve dined at alain ducasse s restaurant in monte carlo for half the $t$ for the same excellent dining experience
+208	-1	service	yeah sometimes the $t$ can be slow
+209	-1	ambiance	there was no $t$
+210	1	food	save your money and do n t waste your calories go to margharita s on washington street instead they have amazing $t$ and the best service
+210	1	service	save your money and do n t waste your calories go to margharita s on washington street instead they have amazing food and the best $t$
+211	1	service	the $t$ was attentive without being overbearing and each dish we tried was wonderful from the spring rolls to the cod with pineapple tempura
+211	1	dish	the service was attentive without being overbearing and each $t$ we tried was wonderful from the spring rolls to the cod with pineapple tempura
+212	1	spring_rolls	the service was attentive without being overbearing and each dish we tried was wonderful from the $t$ to the cod with pineapple tempura
+213	1	cod_with_pineapple_tempura	the service was attentive without being overbearing and each dish we tried was wonderful from the spring rolls to the $t$
+214	-1	waitress	the only weird thing was if we got a bottle the $t$ would have simply multiplied the glass price x4 which makes no sense whatsoever
+214	-1	price	the only weird thing was if we got a bottle the waitress would have simply multiplied the glass $t$ x4 which makes no sense whatsoever
+215	1	sushi	they sell special $t$ everything have a topping sauce and etc
+215	1	sauce	they sell special sushi everything have a topping $t$ and etc
+215	1	topping	they sell special sushi everything have a $t$ sauce and etc
+216	-1	taste	do not try unless you re just going there to hang out like the rest of the hipsters who apparently have no sense of $t$
+217	1	service	the place is small and intimate and you may feel a little crowded but the $t$ is excellent and it s great for friends out a romantic date or a special occassion
+217	-1	place	the $t$ is small and intimate and you may feel a little crowded but the service is excellent and it s great for friends out a romantic date or a special occassion
+218	1	service	the $t$ was excellent and the food was delicious
+218	1	food	the service was excellent and the $t$ was delicious
+219	1	service	$t$ was also very good
+220	1	meal	i took my girlfriend there for her birthday last night and we had a relaxing really good $t$
+221	-1	portions	i would not have been so disappointed with the $t$ if the qualities were good enough to make up for it but they were not
+221	-1	qualities	i would not have been so disappointed with the portions if the $t$ were good enough to make up for it but they were not
+222	1	food	i m happy to have nosh in the neighborhood and the $t$ is very comforting
+223	1	atmosphere	good $t$ combination of all the hottest music dress code is relatively strict except on fridays
+223	1	music	good atmosphere combination of all the hottest $t$ dress code is relatively strict except on fridays
+224	-1	dress_cod	good atmosphere combination of all the hottest music $t$ e is relatively strict except on fridays
+225	1	food	love the $t$
+226	1	candles	i would highly recommend nina s to anyone who wants to have a romantic dinner in a heart warming surrounding filled with $t$ and family pictures
+226	1	dinner	i would highly recommend nina s to anyone who wants to have a romantic $t$ in a heart warming surrounding filled with candles and family pictures
+226	1	surrounding	i would highly recommend nina s to anyone who wants to have a romantic dinner in a heart warming $t$ filled with candles and family pictures
+226	1	pictures	i would highly recommend nina s to anyone who wants to have a romantic dinner in a heart warming surrounding filled with candles and family $t$
+227	1	desserts	all the $t$ the group tried got favorable reviews
+228	1	sake	there s something smooth about sipping $t$ upper east side style
+229	1	place	it s a nice $t$ to relax and have conversation
+230	1	reuben_sandwich	best $t$ ever
+231	1	place	lucky strike is a great casual $t$ to just grab a bite to eat
+232	1	strawberry_daiquiries	wonderful $t$ as well
+233	-1	sushi	the $t$ has been from average to below average the wait service has always been sub par the atmosphere goes from nice to really irritating if you sit in the area beyond the kitchen the acousitcs are horrid everything echoes is extremely loud
+233	-1	atmosphere	the sushi has been from average to below average the wait service has always been sub par the $t$ goes from nice to really irritating if you sit in the area beyond the kitchen the acousitcs are horrid everything echoes is extremely loud
+233	-1	area	the sushi has been from average to below average the wait service has always been sub par the atmosphere goes from nice to really irritating if you sit in the $t$ beyond the kitchen the acousitcs are horrid everything echoes is extremely loud
+234	-1	wait_service	the sushi has been from average to below average the $t$ has always been sub par the atmosphere goes from nice to really irritating if you sit in the area beyond the kitchen the acousitcs are horrid everything echoes is extremely loud
+235	1	frites	$t$ were delicious if a bit on the thick side
+236	1	zen_feel	here you get the $t$ without feeling rigid
+237	-1	wait_time	i would recommend putting your name down and then getting a drink at a local bar first though because of the $t$
+238	1	egg_noodles_in_the_beef_broth_with_shrimp_dumplings_and_slices_of_bbq_roast_pork	i fell in love with the $t$
+239	1	bagel	overall the best $t$ in town
+240	1	summer_rolls	light refreshing $t$ not fried remind me of vietnamese places in paris
+241	1	sushi	the $t$ seemed pretty fresh and was adequately proportioned
+242	-1	service	but the $t$ was a bit slow
+243	1	spreads	$t$ and toppings are great though a bit pricey
+243	1	toppings	spreads and $t$ are great though a bit pricey
+244	1	pizza	when i saw that their website had a link to da ciro in napoli i knew there was going to be good $t$
+245	1	indoor	$t$ was very cozy and cute
+246	1	brunch	we had a 3 hour $t$ they definitely do not rush you and they kept the unlimited mimosas flowing the whole time
+246	1	mimosas	we had a 3 hour brunch they definitely do not rush you and they kept the unlimited $t$ flowing the whole time
+247	-1	prices	and their $t$ are very high they actually think that they can get away with charging such prices for such terrible food and service
+247	-1	prices	and their prices are very high they actually think that they can get away with charging such $t$ for such terrible food and service
+247	-1	food	and their prices are very high they actually think that they can get away with charging such prices for such terrible $t$ and service
+247	-1	service	and their prices are very high they actually think that they can get away with charging such prices for such terrible food and $t$
+248	1	service	the $t$ was excellent the food was excellent but the entire experience was very cool
+248	1	food	the service was excellent the $t$ was excellent but the entire experience was very cool
+249	1	service	the $t$ is good and the resturant is clean
+250	1	drinks	great spot whether looking for a couple of $t$ or quiet dinner
+250	1	dinner	great spot whether looking for a couple of drinks or quiet $t$
+250	1	spot	great $t$ whether looking for a couple of drinks or quiet dinner
+251	-1	dishes	just stick with the small $t$
+252	1	cafe	the $t$ itself was really nice with comfortable outdoor chairs and tables but the service could have been better
+252	1	tables	the cafe itself was really nice with comfortable outdoor chairs and $t$ but the service could have been better
+252	-1	service	the cafe itself was really nice with comfortable outdoor chairs and tables but the $t$ could have been better
+253	1	outdoor_chairs	the cafe itself was really nice with comfortable $t$ and tables but the service could have been better
+254	1	staff	i ve rarely had a problem with slow $t$ in the 10 years i ve been going
+255	1	food	$t$ is excellent
+256	1	salads	although we were looking for regular lettuce and some walnuts the $t$ we got were great
+257	1	lunch_buffet	excellent $t$ for only 6 95
+258	-1	cuisine	if you re not familiar with the $t$ you may encounter problems ordering here and be sure to bring plenty of cash with you as they do n t accept credit cards
+259	1	priced	both are very reasonably $t$ around 8 for dinner and 5 for lunch and are delicious and filling
+259	1	dinner	both are very reasonably priced around 8 for $t$ and 5 for lunch and are delicious and filling
+259	1	lunch	both are very reasonably priced around 8 for dinner and 5 for $t$ and are delicious and filling
+260	1	ambience	$t$ is so cute and quaint good for business although we were there on vacation
+261	1	portion_sizes	the $t$ here are huge and the sushi is good
+262	1	sushi	the portion sizes here are huge and the $t$ is good
+263	1	tuna	my boyfriend ate $t$ and it was cooked perfectly
+264	1	food	good $t$ at the restaurant a bit expensive but great if you want to impress your date
+265	1	caviar	i highly recommend caviar russe to anyone who wants delicious top grade $t$ and fantastic service
+265	1	service	i highly recommend caviar russe to anyone who wants delicious top grade caviar and fantastic $t$
+266	-1	food	you ca n t say its cheap because $t$ is cheaper in chinatown
+267	1	food	i have eaten there 3 4 times and the $t$ was always good
+268	-1	wait	i was n t thrilled to have to $t$ on line for thirty minutes but i guess that s the price you pay for a popular place
+269	1	eats	great $t$ good times
+270	1	fish	grilled whole $t$ wonderful great spicing
+271	-1	tuscan_cuisine	for years i thought $t$ was the best but salvatore converted me to the hearty neapolitan fare on my first visit
+272	1	neapolitan_fare	for years i thought tuscan cuisine was the best but salvatore converted me to the hearty $t$ on my first visit
+273	-1	entrees	plus when our $t$ were held up in the kitchen on a busy saturday night the owner sent over complimentary summer rolls to hold us over
+273	1	owner	plus when our entrees were held up in the kitchen on a busy saturday night the $t$ sent over complimentary summer rolls to hold us over
+274	1	summer_rolls	plus when our entrees were held up in the kitchen on a busy saturday night the owner sent over complimentary $t$ to hold us over
+275	1	service	the $t$ was great as well
+276	1	lobster_teriyaki	try the $t$ and the rose special roll
+277	1	rose_special_roll	try the lobster teriyaki and the $t$
+278	1	entrees	another plus is most of the $t$ are approx
+279	1	food	the $t$ was delicious the atmosphere was relaxed and we have now adopted plate 347 as our secret on second
+279	1	atmosphere	the food was delicious the $t$ was relaxed and we have now adopted plate 347 as our secret on second
+280	-1	place	from the moment we walked in they were more than accomodating even though the $t$ was packed
+281	1	food	i found the $t$ service and value exceptional everytime i have been there
+281	1	service	i found the food $t$ and value exceptional everytime i have been there
+281	1	value	i found the food service and $t$ exceptional everytime i have been there
+282	-1	foods	we ate at this thai place following the reviews but very unhappy with the $t$
+283	1	food	the $t$ is definitely good but i left a bit disappointed
+284	1	drinks	the $t$ are a saving grace but service staff please get over yourselves
+285	-1	service_staff	the drinks are a saving grace but $t$ please get over yourselves
+286	-1	delivery_guys	there is a downside if you re ordering in the $t$ have major attitude
+287	1	staff	the all italian $t$ is warm and engaging from the start
+288	1	prices	the $t$ are exceptionally reasonable for food of this caliber
+288	1	food	the prices are exceptionally reasonable for $t$ of this caliber
+289	1	tamarind_margaritas	if you go here your focus should be the $t$
+290	1	filet_mignon_dish	the $t$ was superb
+291	1	food	i had been a regular due to the consistently good $t$ and ease of getting a table
+292	1	getting_a_table	i had been a regular due to the consistently good food and ease of $t$
+293	1	place	this $t$ is the most japanese it can ever get
+294	1	food	the $t$ is good i ca n t lie
+295	1	food	great $t$ lt s of it more then one person can eat
+296	1	pastrami_on_challah_sandwich	i did n t expect to like nosh as much as i did but the $t$ i had was otherworldly the soups are like mom s and the knishes give yonah schimmel s a run for its money
+297	1	soups	i did n t expect to like nosh as much as i did but the pastrami on challah sandwich i had was otherworldly the $t$ are like mom s and the knishes give yonah schimmel s a run for its money
+297	1	knishes	i did n t expect to like nosh as much as i did but the pastrami on challah sandwich i had was otherworldly the soups are like mom s and the $t$ give yonah schimmel s a run for its money
+298	1	atomosphere	cozy romantic $t$ with only around 15 tables at most
+298	1	tables	cozy romantic atomosphere with only around 15 $t$ at most
+299	1	beer	this place is worth going even if only for their $t$
+300	1	scallops	i really like both the $t$ and the mahi mahi on saffron risotto yum
+301	1	mahi_mahi_on_saffron_risotto	i really like both the scallops and the $t$ yum
+302	1	ambience	the $t$ was so fun and the prices were great on top of the fact that the food was really tasty
+302	1	prices	the ambience was so fun and the $t$ were great on top of the fact that the food was really tasty
+302	1	food	the ambience was so fun and the prices were great on top of the fact that the $t$ was really tasty
+303	-1	go_go_hamburgers	do not get the $t$ no matter what the reviews say
+304	1	sandwhiches	the $t$ are out of this world
+305	1	thia_food	if you live in upper manhattan siam square is the place for $t$
+306	1	decor	$t$ is charming
+307	1	food	the $t$ was very well prepared
+308	1	spring_rolls	really tasty $t$ and noodles for a good price though
+309	1	noodles	really tasty spring rolls and $t$ for a good price though
+309	1	price	really tasty spring rolls and noodles for a good $t$ though
+310	-1	dim_sum	good because hey it s more food but bad because $t$ is supposed to be smaller portions so you can try out more dishes and smaller so that each dish is cheap
+311	1	food	good because hey it s more $t$ but bad because dim sum is supposed to be smaller portions so you can try out more dishes and smaller so that each dish is cheap
+311	-1	portions	good because hey it s more food but bad because dim sum is supposed to be smaller $t$ so you can try out more dishes and smaller so that each dish is cheap
+312	-1	drinks	while most people can attest to spending over 50 on $t$ in new york bars and hardly feeling a thing the drinks here are plentiful and unique
+312	-1	bars	while most people can attest to spending over 50 on drinks in new york $t$ and hardly feeling a thing the drinks here are plentiful and unique
+312	1	drinks	while most people can attest to spending over 50 on drinks in new york bars and hardly feeling a thing the $t$ here are plentiful and unique
+313	1	stuff	complimentary $t$ kept coming and when the waiter saw me opening a gift i received my dessert on a plate that had happy birthday written on it with a candlevery nice touch and attentive staff
+313	1	waiter	complimentary stuff kept coming and when the $t$ saw me opening a gift i received my dessert on a plate that had happy birthday written on it with a candlevery nice touch and attentive staff
+313	1	dessert	complimentary stuff kept coming and when the waiter saw me opening a gift i received my $t$ on a plate that had happy birthday written on it with a candlevery nice touch and attentive staff
+313	1	staff	complimentary stuff kept coming and when the waiter saw me opening a gift i received my dessert on a plate that had happy birthday written on it with a candlevery nice touch and attentive $t$
+314	-1	food	the $t$ arrived 20 minutes after i called cold and soggy
+315	1	pre_theatre_menu	if you go for the $t$ it s an even greater deal
+316	1	seafood	if you are someone who appreciates simplicity elegance and wonderfully presented and tasting $t$ and vegetables regardless of portion size kai is your place
+316	1	vegetables	if you are someone who appreciates simplicity elegance and wonderfully presented and tasting seafood and $t$ regardless of portion size kai is your place
+317	-1	portion_size	if you are someone who appreciates simplicity elegance and wonderfully presented and tasting seafood and vegetables regardless of $t$ kai is your place
+318	1	prices	the $t$ can not be beat for the quality quantity freshness and taste
+318	1	quality	the prices can not be beat for the $t$ quantity freshness and taste
+318	1	quantity	the prices can not be beat for the quality $t$ freshness and taste
+318	1	freshness	the prices can not be beat for the quality quantity $t$ and taste
+318	1	taste	the prices can not be beat for the quality quantity freshness and $t$
+319	1	stomach	check it out it wo n t hurt your $t$ or your wallet
+319	1	wallet	check it out it wo n t hurt your stomach or your $t$
+320	1	gnochi	little tonino s is just awesome our favorite delivery place in kennsington honestly the best $t$ i have ever had
+321	-1	service	incredibly poor $t$ an food quality at exorbitant prices
+321	-1	prices	incredibly poor service an food quality at exorbitant $t$
+322	-1	food_quality	incredibly poor service an $t$ at exorbitant prices
+323	1	meal	i have been about 4 times and have always had a great $t$
+324	-1	line	i go back in $t$ like three times on average until i ca n t walk anymore
+325	1	dinner_specials	we usually just get some of the $t$ and they are very reasonably priced and very tasty
+326	1	priced	we usually just get some of the dinner specials and they are very reasonably $t$ and very tasty
+327	-1	food	horrible $t$ and horrible service
+327	-1	service	horrible food and horrible $t$
+328	1	wine	the $t$ and cheese plate are plentiful and ca n t wait to try the fondue or table grilling
+328	1	cheese	the wine and $t$ plate are plentiful and ca n t wait to try the fondue or table grilling
+328	1	fondue	the wine and cheese plate are plentiful and ca n t wait to try the $t$ or table grilling
+329	1	table_grilling	the wine and cheese plate are plentiful and ca n t wait to try the fondue or $t$
+330	1	food	they treated us well and the $t$ was extremely fresh and well prepared
+331	1	exotic_salad	their $t$ is basic ly a delcious little green salad with a peanut sauce that is perfect before their sweet basil fried tofu
+332	1	green_salad	their exotic salad is basic ly a delcious little $t$ with a peanut sauce that is perfect before their sweet basil fried tofu
+333	1	sweet_basil_fried_tofu	their exotic salad is basic ly a delcious little green salad with a peanut sauce that is perfect before their $t$
+334	1	peanut_sauce	their exotic salad is basic ly a delcious little green salad with a $t$ that is perfect before their sweet basil fried tofu
+335	-1	toasting	the big complaint no $t$ available
+336	1	food	even if the $t$ was n t this good the garden is a great place to sit outside and relax
+336	1	garden	even if the food was n t this good the $t$ is a great place to sit outside and relax
+336	1	place	even if the food was n t this good the garden is a great $t$ to sit outside and relax
+337	1	service	volare virgins or weekly regulars everyone gets treated the same and you ca n t ask for more than that when the $t$ is this friendly
+338	-1	food	the $t$ came out wrong the waiter was no where to be found and the wine showed up at the end of the meal
+338	-1	waiter	the food came out wrong the $t$ was no where to be found and the wine showed up at the end of the meal
+338	-1	wine	the food came out wrong the waiter was no where to be found and the $t$ showed up at the end of the meal
+339	1	chicken	the $t$ and steak were seasoned and cooked to perfection and the lamb sandwhich is great for heartier appetites
+339	1	steak	the chicken and $t$ were seasoned and cooked to perfection and the lamb sandwhich is great for heartier appetites
+340	1	lamb_sandwhich	the chicken and steak were seasoned and cooked to perfection and the $t$ is great for heartier appetites
+341	-1	dim_sum_dish	we saw them heating up at least one frozen item though i m not sure which $t$ it was
+342	1	food	no you re going to go back because the $t$ was good
+343	1	food	the $t$ was great and the service was even better
+343	1	service	the food was great and the $t$ was even better
+344	1	rice	while this can hardly be called a restaurant it is possibly the best deal in manhatten 4 for a plate heaped with $t$ and 2 3 entrees
+344	1	entrees	while this can hardly be called a restaurant it is possibly the best deal in manhatten 4 for a plate heaped with rice and 2 3 $t$
+345	1	traditional_french_decour	$t$ was pleasant though the hall was rather noisy the restaurant was full and we had to raise our voices to be able to maintain a conversation
+346	-1	hall	traditional french decour was pleasant though the $t$ was rather noisy the restaurant was full and we had to raise our voices to be able to maintain a conversation
+347	1	fish	the $t$ is fresh and each piece is sliced to perfection and seasoned by the sushi chef usually with a little fresh wasabi and soy sauce but also sometimes with some sea salt
+347	1	wasabi	the fish is fresh and each piece is sliced to perfection and seasoned by the sushi chef usually with a little fresh $t$ and soy sauce but also sometimes with some sea salt
+348	1	sushi_chef	the fish is fresh and each piece is sliced to perfection and seasoned by the $t$ usually with a little fresh wasabi and soy sauce but also sometimes with some sea salt
+349	1	soy_sauce	the fish is fresh and each piece is sliced to perfection and seasoned by the sushi chef usually with a little fresh wasabi and $t$ but also sometimes with some sea salt
+350	1	sea_salt	the fish is fresh and each piece is sliced to perfection and seasoned by the sushi chef usually with a little fresh wasabi and soy sauce but also sometimes with some $t$
+351	-1	burgers	consequently their $t$ fell apart in their hands and made such a mess that they did nt feel like finishing them
+352	1	cheeseburgers	my son and his girlfriend both wanted $t$ and they were huge
+353	1	unda_egg_rolls	i really recommend the very simple $t$
+354	1	wine_choices	very good $t$
+355	1	jazz	this is the only thai place i go too in nyc it s wonderful and live relaxed $t$ on certain nights
+356	-1	waitstaff	we were seated and ignored by $t$
+357	1	lazy_susans	if you are in a big group this place is perfect because it recomends sharing they have $t$ on most tables even families can feel comfortable here
+358	1	tables	if you are in a big group this place is perfect because it recomends sharing they have lazy susans on most $t$ even families can feel comfortable here
+359	1	tuna	they showed up 15 minutes after the $t$ melt
+360	1	steak	tasty $t$ pork loin the works
+361	1	pork_loin	tasty steak $t$ the works
+362	-1	wait	i went with 5 friends and we lingered at the table for a bit and did n t feel rushed at all even though there was a $t$
+363	1	setting	i d highly recommend it for a special occasion it provides and intimate $t$ and nice service
+363	1	service	i d highly recommend it for a special occasion it provides and intimate setting and nice $t$
+364	1	burger	the $t$ was great also
+365	-1	discount	they did give a 15 $t$ at the end was n t enough as they knew the service was horrible
+365	-1	service	they did give a 15 discount at the end was n t enough as they knew the $t$ was horrible
+366	1	portions	just because it s cheap does not mean the $t$ are small or the food is nasty it is great
+366	1	food	just because it s cheap does not mean the portions are small or the $t$ is nasty it is great
+367	1	pizza	the $t$ was great
+368	1	edamame_pureed	i had never had $t$ before but i thought it was innovative and tasty could ve used a bit more salt
+369	-1	service	however it s the $t$ that leaves a bad taste in my mouth
+370	1	price	the $t$ was extremely reasonable for the appetizers and food we ate
+370	1	appetizers	the price was extremely reasonable for the $t$ and food we ate
+370	1	food	the price was extremely reasonable for the appetizers and $t$ we ate
+371	-1	vegetarian_dishes	do n t dine at tamarind for the $t$ they are simply not up to par with the non veg selections
+372	1	non_veg_selections	do n t dine at tamarind for the vegetarian dishes they are simply not up to par with the $t$
+373	1	owner	kenny the $t$ is always there and he treats my family like we are part of his family
+374	1	sushi	they need a kick out of it but until then the $t$ is pretty good and the place is consistent
+374	1	place	they need a kick out of it but until then the sushi is pretty good and the $t$ is consistent
+375	1	wait	i ve had to wait only a few times during lunch but this place is definitely worth the $t$
+376	1	food	all in all the $t$ was above average and i would return to see how they operate with four or less dinners
+377	1	food	delicious $t$ excellent service and a pretty atmosphere make this a great choice for dinner and the 5 99 lunch buffet makes it an even better choice for lunch
+377	1	service	delicious food excellent $t$ and a pretty atmosphere make this a great choice for dinner and the 5 99 lunch buffet makes it an even better choice for lunch
+377	1	atmosphere	delicious food excellent service and a pretty $t$ make this a great choice for dinner and the 5 99 lunch buffet makes it an even better choice for lunch
+377	1	dinner	delicious food excellent service and a pretty atmosphere make this a great choice for $t$ and the 5 99 lunch buffet makes it an even better choice for lunch
+377	1	lunch	delicious food excellent service and a pretty atmosphere make this a great choice for dinner and the 5 99 lunch buffet makes it an even better choice for $t$
+378	1	lunch_buffet	delicious food excellent service and a pretty atmosphere make this a great choice for dinner and the 5 99 $t$ makes it an even better choice for lunch
+379	1	shrimp_fritters	for appetizers i recommend the $t$ and dumplings
+380	1	dumplings	for appetizers i recommend the shrimp fritters and $t$
+381	1	people	such nice $t$ working here but i have to review the food
+382	-1	spot_lights	the restaurant is dark and not very attractive and then you have $t$ shining on you putting you in the worst light possible reaching for sunglasses
+383	1	times_square_cocktail	try the $t$ ginger lemonade with vodka also available without vodka
+384	1	ginger_lemonade_with_vodka	try the times square cocktail $t$ also available without vodka
+385	1	veal_parmigana	$t$ better than patsy s
+386	1	wine	great $t$ great food
+386	1	food	great wine great $t$
+387	-1	air_conditioning	the service was mediocre and the lack of $t$ made for a less than comfortable meal
+388	-1	meal	the service was mediocre and the lack of air conditioning made for a less than comfortable $t$
+389	1	food	the $t$ and staff always surprise me with the new heights they are taken to
+389	1	staff	the food and $t$ always surprise me with the new heights they are taken to
+390	-1	sushi	honestly the worst $t$ my husband and i had in our entire lives
+391	1	food	however if you want great $t$ at a great price and do n t mind the decor you ca n t beat this place
+391	1	price	however if you want great food at a great $t$ and do n t mind the decor you ca n t beat this place
+391	-1	decor	however if you want great food at a great price and do n t mind the $t$ you ca n t beat this place
+392	1	sichuan_cooking	what makes this restaurant special are the authentic $t$ and being the only one in nyc that offers authentic chongqing hotpot
+393	1	chongqing_hotpot	what makes this restaurant special are the authentic sichuan cooking and being the only one in nyc that offers authentic $t$
+394	-1	table	our tiny $t$ for two dinner plates hung over edge was right in the middle of one of the lanes of waiter traffic
+395	-1	waiter_traffic	our tiny table for two dinner plates hung over edge was right in the middle of one of the lanes of $t$
+396	-1	dinner_plates	our tiny table for two $t$ hung over edge was right in the middle of one of the lanes of waiter traffic
+397	-1	sake_collection	$t$ was excellent try nanbu bijin but pricy
+398	1	nanbu_bijin	sake collection was excellent try $t$ but pricy
+399	1	dishes	interesting other $t$ for a change include chicken in curry sauce and salmon caserole
+400	1	chicken_in_curry_sauc	interesting other dishes for a change include $t$ e and salmon caserole
+401	1	salmon_caserole	interesting other dishes for a change include chicken in curry sauce and $t$
+402	1	angry_lobster	one of my favorites though was the $t$ a cold lobster salad that was magnificent
+403	1	cold_lobster_salad	one of my favorites though was the angry lobster a $t$ that was magnificent
+404	1	bartender	ask for usha the nicest $t$ in manhattan
+405	1	service	the $t$ is outstanding and my crab cake eggs benedict could not have been better
+406	1	crab_cake_eggs_benedict	the service is outstanding and my $t$ could not have been better
+407	1	decor	the place s $t$ and hidden bathrooms made for a good laugh
+407	1	bathrooms	the place s decor and hidden $t$ made for a good laugh
+408	1	location	its $t$ is good and the fact that hutner college is near and their prices are very reasonable makes students go back to suan again and again
+408	1	prices	its location is good and the fact that hutner college is near and their $t$ are very reasonable makes students go back to suan again and again
+409	1	place	a wonderful $t$
+410	-1	service	$t$ was on par but not wonderful
+411	-1	deliveries	$t$ often take up to an hour and the prices are higher than most other pizzerias in the area
+411	-1	prices	deliveries often take up to an hour and the $t$ are higher than most other pizzerias in the area
+412	-1	place	kind of a small $t$ but i guess if they are not too busy might be able to fit a group or kids
+413	-1	take_out_pies	because of the delicate thin crust $t$ get soggy in their boxes
+414	-1	crust	because of the delicate thin $t$ take out pies get soggy in their boxes
+415	1	place	this $t$ is always very crowded and popular
+416	-1	mascarpone_with_chocolate_chip	they should have called it $t$ s good but a far cry from what the name implies
+417	-1	manager	a gentleman maybe the $t$ came to our table and without so much as a smile or greeting asked for our order
+417	-1	gentleman	a $t$ maybe the manager came to our table and without so much as a smile or greeting asked for our order
+418	-1	meal	he was terribly thirsty after the $t$ too
+419	1	soup	get the $t$ and a nosh pastrami sandwich for 8 and you re golden
+420	1	nosh_pastrami_sandwich	get the soup and a $t$ for 8 and you re golden
+421	1	bagels	i grew up on these $t$
+422	-1	table	we were told that they were booked solid and no other $t$ was available
+423	-1	hostess	to my right the $t$ stood over a busboy and hissed rapido rapido as he tried to clear and re set a table for six
+424	-1	pizza	after dealing with subpar $t$ all over the kensington neighborhood i ve found little toninos
+425	1	gnocchi	i m partial to the $t$
+426	-1	beer	note that they do not serve $t$ you must bring your own
+427	1	appetizers	from the $t$ we ate the dim sum and other variety of foods it was impossible to criticize the food
+427	1	foods	from the appetizers we ate the dim sum and other variety of $t$ it was impossible to criticize the food
+427	1	food	from the appetizers we ate the dim sum and other variety of foods it was impossible to criticize the $t$
+428	1	dim_sum	from the appetizers we ate the $t$ and other variety of foods it was impossible to criticize the food
