@@ -126,21 +126,29 @@ def creat_word_embedding(revs, word_embeding_dim=100):
     return word_idx_map, word_embeding
 
 
-def data_parse_for_lstm(revs, word_idx_map, max_len):
-    x = []
+def data_parse_one_direction(revs, word_idx_map, max_len):
+    x, x_fw, x_bw = [], [], []
     for rev in revs:
         _, tar, content = rev
         content = content.split()
-        content[content.index('$t$')] = tar 
-        x.append(list(map(lambda w: word_idx_map.get(w, 0), content)))
+        tar_idx = content.index('$t$')
+        content[tar_idx] = tar
+        content = list(map(lambda w: word_idx_map.get(w, 0), content))
+
+        if tar_idx < max_len:
+            x_fw = [0] * (max_len - tar_idx) + content[0:tar_idx]
+        else:
+            x_fw = content[tar_idx - max_len:tar_idx]
+
+        if tar_idx + max_len + 1 > len(content):
+            x_bw = content[tar_idx:] + [0] * (tar_idx + max_len + 1 - len(content))
+        else:
+            x_bw = content[tar_idx: tar_idx + max_len + 1]
+
+        x.append(x_fw + x_bw)
     y = label_parse([rev[0] for rev in revs])
     sen_len = [len(sen) for sen in x]
     
-    for i in range(len(x)):
-        if len(x[i]) < max_len:
-            x[i] += [0] * (max_len - len(x[i]))
-        else:
-            x[i] = x[i][0:max_len]
     return np.asarray(x), np.asarray(sen_len), y
 
 

@@ -2,22 +2,22 @@ import tensorflow as tf
 
 from utils import batch_index
 
+def show_res(iter, tr_loss, tr_acc, te_loss, te_acc):
+    if iter == 0:
+        print('iter\tTrain loss\tTrain acc\tTest loss\tTest acc')
+    print('{}\t{:.6f}\t{:.6f}\t{:.6f}\t{:.6f}'.format(iter, tr_loss, tr_acc, te_loss, te_acc))
 
 class LSTM(object):
 
-    def __init__(self, batch_size=64, n_hidden=100, learning_rate=0.01,
-                 n_class=3, max_sentence_len=50, l2_reg=0., n_iter=100):
+    def __init__(self, n_hidden=100, n_class=2, max_sentence_len=50, l2_reg=0.):
         self.word_idx_map = None
         self.w2v = None
         self.embedding_dim = None
         
-        self.batch_size = batch_size
         self.n_hidden = n_hidden
-        self.learning_rate = learning_rate
         self.n_class = n_class
         self.max_sentence_len = max_sentence_len
         self.l2_reg = l2_reg
-        self.n_iter = n_iter
         
         self.dropout_keep_prob = tf.placeholder(tf.float32)
         with tf.name_scope('inputs'):
@@ -70,7 +70,7 @@ class LSTM(object):
 
         return predict
 
-    def train(self, word_idx_map, w2v, train_data, test_data):
+    def learn(self, word_idx_map, w2v, train_data, test_data, n_iter=100, batch_size=64, learning_rate=0.01):
         self.word_idx_map = word_idx_map
         self.w2v = tf.Variable(w2v, name='word_embedding')
         self.embedding_dim = w2v.shape[1]
@@ -83,7 +83,7 @@ class LSTM(object):
 
         with tf.name_scope('train'):
             global_step = tf.Variable(0, name="tr_global_step", trainable=False)
-            optimizer = tf.train.AdamOptimizer(learning_rate=self.learning_rate).minimize(cost, global_step=global_step)
+            optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost, global_step=global_step)
 
         with tf.name_scope('predict'):
             correct_pred = tf.equal(tf.argmax(prob, 1), tf.argmax(self.y, 1))
@@ -98,55 +98,30 @@ class LSTM(object):
             sess.run(init)
 
             max_acc = 0.
-            def test_batch(x, y, sen_len, batch_size, keep_prob):
+            def test(x, y, sen_len, te_batch_size, keep_prob):
                 acc, loss, cnt = 0., 0., 0.
-                for test, num in self.get_batch_data(x, y, sen_len, batch_size, keep_prob):
+                for test, num in self.get_batch_data(x, y, sen_len, te_batch_size, keep_prob):
                     _loss, _acc = sess.run([cost, accuracy], feed_dict=test)
                     acc += _acc
                     loss += _loss * num
                     cnt += num
-                return acc, loss, cnt
+                return acc / cnt, loss / cnt
 
-            print('=' * 80 + '\nBefore training')
-            acc, loss, cnt = test_batch(tr_x, tr_y, tr_sen_len, 1000, 0.5)
-            print('Train mini-batch loss={:.6f} - Train acc={:.6f}'.format(
-                loss / cnt, acc / cnt
-            ))
-                           
-            acc, loss, cnt = test_batch(te_x, te_y, te_sen_len, 1000, 0.5)
+            tr_acc, tr_loss = test(tr_x, tr_y, tr_sen_len, 1000, 0.5)
+            te_acc, te_loss = test(te_x, te_y, te_sen_len, 1000, 0.5)
+            show_res(0, tr_loss, tr_acc, te_loss, te_acc)
 
-            print('Test mini-batch loss={:.6f} - Test acc={:.6f}'.format(
-                loss / cnt, acc / cnt
-            ))
-
-            for i in range(self.n_iter):
-                for train, _ in self.get_batch_data(tr_x, tr_y, tr_sen_len, self.batch_size, 1.0):
+            for i in range(n_iter):
+                for train, _ in self.get_batch_data(tr_x, tr_y, tr_sen_len, batch_size, 1.0):
                     sess.run([optimizer, global_step], feed_dict=train)
-                acc, loss, cnt = test_batch(tr_x, tr_y, tr_sen_len, 1000, 0.5)
-                
-                print('=' * 80 + '\nIter {0}:'.format(i + 1))
+                tr_acc, tr_loss = test(tr_x, tr_y, tr_sen_len, 1000, 0.5)
+                te_acc, te_loss = test(te_x, te_y, te_sen_len, 1000, 0.5)
+                show_res(i + 1, tr_loss, tr_acc, te_loss, te_acc)
 
-                print('Train mini-batch loss={:.6f} - Train acc={:.6f}'.format(
-                    loss / cnt, acc / cnt
-                ))
-                           
-                acc, loss, cnt = test_batch(te_x, te_y, te_sen_len, 1000, 0.5)
-
-                print('Test mini-batch loss={:.6f} - Test acc={:.6f}'.format(
-                    loss / cnt, acc / cnt
-                ))
-
-                if acc / cnt > max_acc:
-                    max_acc = acc / cnt
+                if te_acc > max_acc:
+                    max_acc = te_acc
             print('Optimization Finished! Max acc={}'.format(max_acc))
 
-            print('Learning_rate={}, iter_num={}, batch_size={}, hidden_num={}, l2={}'.format(
-                self.learning_rate,
-                self.n_iter,
-                self.batch_size,
-                self.n_hidden,
-                self.l2_reg
-            ))
 
     def get_batch_data(self, x, y, sen_len, batch_size, keep_prob):
         for index in batch_index(len(y), batch_size, 1):
@@ -161,23 +136,16 @@ class LSTM(object):
 
 class TC_LSTM(object):
 
-    def __init__(
-        self, batch_size=64, n_hidden=100, learning_rate=0.01,
-        n_class=2, max_sentence_len=50, l2_reg=0., n_iter=100
-    ):
+    def __init__(self, n_hidden=100, n_class=2, max_sentence_len=50, l2_reg=0.):
         self.word_idx_map = None
         self.w2v = None
         self.embedding_dim = None
 
-        self.batch_size = batch_size
         self.n_hidden = n_hidden
-        self.learning_rate = learning_rate
         self.n_class = n_class
         self.max_sentence_len = max_sentence_len
-
         self.l2_reg = l2_reg
-        self.n_iter = n_iter
-        
+
         self.dropout_keep_prob = tf.placeholder(tf.float32)
 
         with tf.name_scope('inputs'):
@@ -251,7 +219,7 @@ class TC_LSTM(object):
         predict = tf.matmul(output, self.weights['softmax_bi_lstm']) + self.biases['softmax_bi_lstm']
         return predict
 
-    def train(self, word_idx_map, w2v, train_data, test_data):
+    def learn(self, word_idx_map, w2v, train_data, test_data, n_iter=100, batch_size=64, learning_rate=0.01):
         """[summary]
         
         [description]
@@ -270,8 +238,8 @@ class TC_LSTM(object):
         inputs_bw = tf.nn.embedding_lookup(self.w2v, self.x_bw)
         
         target = tf.reduce_mean(tf.nn.embedding_lookup(self.w2v, self.target_words), 1, keepdims=True)
-        batch_size = tf.shape(inputs_bw)[0]
-        target = tf.zeros([batch_size, self.max_sentence_len, self.embedding_dim]) + target
+        _batch_size = tf.shape(inputs_bw)[0]
+        target = tf.zeros([_batch_size, self.max_sentence_len, self.embedding_dim]) + target
         
         inputs_fw = tf.concat([inputs_fw, target], 2)
         inputs_bw = tf.concat([inputs_bw, target], 2)
@@ -283,26 +251,13 @@ class TC_LSTM(object):
 
         with tf.name_scope('train'):
             global_step = tf.Variable(0, name="tr_global_step", trainable=False)
-            optimizer = tf.train.AdamOptimizer(learning_rate=self.learning_rate).minimize(cost, global_step=global_step)
+            optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost, global_step=global_step)
 
         with tf.name_scope('predict'):
             correct_pred = tf.equal(tf.argmax(prob, 1), tf.argmax(self.y, 1))
             accuracy = tf.reduce_sum(tf.cast(correct_pred, tf.int32))
-            #_acc = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
 
         with tf.Session() as sess:
-            #summary_loss = tf.summary.scalar('loss', cost)
-            #summary_acc = tf.summary.scalar('acc', _acc)
-            
-            #train_summary_op = tf.summary.merge([summary_loss, summary_acc])
-            #tf.summary.merge([summary_loss, summary_acc])
-            #test_summary_op = tf.summary.merge([summary_loss, summary_acc])
-            
-            #timestamp = str(int(time.time()))
-            #_dir = 'logs/' + str(timestamp) + '_' + self.type_ + '_r' + str(self.learning_rate) + '_b' + str(self.batch_size) + '_l' + str(self.l2_reg)
-            #train_summary_writer = tf.summary.FileWriter(_dir + '/train', sess.graph)
-            #test_summary_writer = tf.summary.FileWriter(_dir + '/test', sess.graph)
-            #tf.summary.FileWriter(_dir + '/validate', sess.graph)
 
             tr_x_fw, tr_len_fw, tr_x_bw, tr_len_bw, tr_target_word, tr_y = train_data
             te_x_fw, te_len_fw, te_x_bw, te_len_bw, te_target_word, te_y = test_data
@@ -312,59 +267,34 @@ class TC_LSTM(object):
 
             max_acc = 0.
 
-            def test_batch(x_fx, len_fx, x_bw, len_bw, y, target_words, batch_size, keep_prob):
+            def test(x_fx, len_fx, x_bw, len_bw, y, target_words, te_batch_size, keep_prob):
                 acc, loss, cnt = 0., 0., 0.
-                for test, num in self.get_batch_data(x_fx, len_fx, x_bw, len_bw, y, target_words, batch_size, keep_prob):
+                for test, num in self.get_batch_data(x_fx, len_fx, x_bw, len_bw, y, target_words, te_batch_size, keep_prob):
                     _loss, _acc = sess.run([cost, accuracy], feed_dict=test)
                     acc += _acc
                     loss += _loss * num
                     cnt += num
-                return acc, loss, cnt
+                return acc / cnt, loss / cnt
 
-            print('=' * 80 + '\nBefore training')
-            acc, loss, cnt = test_batch(tr_x_fw, tr_len_fw, tr_x_bw, tr_len_bw, tr_y, tr_target_word, 1000, 0.5)
-            print('Train mini-batch loss={:.6f} - Train acc={:.6f}'.format(
-                loss / cnt, acc / cnt
-            ))
-                           
-            acc, loss, cnt = test_batch(te_x_fw, te_len_fw, te_x_bw, te_len_bw, te_y, te_target_word, 2000, 1.0)
+            tr_acc, tr_loss = test(tr_x_fw, tr_len_fw, tr_x_bw, tr_len_bw, tr_y, tr_target_word, 1000, 0.5)
+            te_acc, te_loss = test(te_x_fw, te_len_fw, te_x_bw, te_len_bw, te_y, te_target_word, 2000, 1.0)
 
-            print('Test mini-batch loss={:.6f} - Test acc={:.6f}'.format(
-                loss / cnt, acc / cnt
-            ))
+            show_res(0, tr_loss, tr_acc, te_loss, te_acc)
 
-            for i in range(self.n_iter):
-                for train, _ in self.get_batch_data(tr_x_fw, tr_len_fw, tr_x_bw, tr_len_bw, tr_y, tr_target_word, self.batch_size, 0.5):
+            for i in range(n_iter):
+                for train, _ in self.get_batch_data(tr_x_fw, tr_len_fw, tr_x_bw, tr_len_bw, tr_y, tr_target_word, batch_size, 0.5):
                     sess.run([optimizer, global_step], feed_dict=train)
-                    #train_summary_writer.add_summary(summary, step)
-                
-                #test_summary_writer.add_summary(summary, step)
-                #test_summary_writer.add_summary(summary, step)
-                
-                print('=' * 80 + '\nIter {0}:'.format(i + 1))
-                acc, loss, cnt = test_batch(tr_x_fw, tr_len_fw, tr_x_bw, tr_len_bw, tr_y, tr_target_word, 1000, 0.5)
-                print('Train mini-batch loss={:.6f} - Train acc={:.6f}'.format(
-                    loss / cnt, acc / cnt
-                ))
-                
-                acc, loss, cnt = test_batch(te_x_fw, te_len_fw, te_x_bw, te_len_bw, te_y, te_target_word, 2000, 1.0)
+             
+                tr_acc, tr_loss = test(tr_x_fw, tr_len_fw, tr_x_bw, tr_len_bw, tr_y, tr_target_word, 1000, 0.5)
+                te_acc, te_loss = test(te_x_fw, te_len_fw, te_x_bw, te_len_bw, te_y, te_target_word, 2000, 1.0)
 
-                print('Test mini-batch loss={:.6f} - Test acc={:.6f}'.format(
-                    loss / cnt, acc / cnt
-                ))
+                show_res(i + 1, tr_loss, tr_acc, te_loss, te_acc)
 
-                if acc / cnt > max_acc:
-                    max_acc = acc / cnt
-                                
+                if te_acc > max_acc:
+                    max_acc = te_acc
+
             print('Optimization Finished! Max acc={}'.format(max_acc))
 
-            print('Learning_rate={}, iter_num={}, batch_size={}, hidden_num={}, l2={}'.format(
-                self.learning_rate,
-                self.n_iter,
-                self.batch_size,
-                self.n_hidden,
-                self.l2_reg
-            ))
 
     def get_batch_data(self, x, sen_len, x_bw, sen_len_bw, y, target_words, batch_size, keep_prob):
         for index in batch_index(len(y), batch_size, 1):
@@ -382,22 +312,15 @@ class TC_LSTM(object):
 
 class TD_LSTM(object):
 
-    def __init__(
-        self, batch_size=64, n_hidden=100, learning_rate=0.01,
-        n_class=2, max_sentence_len=50, l2_reg=0., n_iter=100
-    ):
+    def __init__(self, n_hidden=100, n_class=2, max_sentence_len=50, l2_reg=0.):
         self.word_idx_map = None
         self.w2v = None
         self.embedding_dim = None
 
-        self.batch_size = batch_size
         self.n_hidden = n_hidden
-        self.learning_rate = learning_rate
         self.n_class = n_class
         self.max_sentence_len = max_sentence_len
-
         self.l2_reg = l2_reg
-        self.n_iter = n_iter
         
         self.dropout_keep_prob = tf.placeholder(tf.float32)
 
@@ -470,7 +393,7 @@ class TD_LSTM(object):
         predict = tf.matmul(output, self.weights['softmax_bi_lstm']) + self.biases['softmax_bi_lstm']
         return predict
 
-    def train(self, word_idx_map, w2v, train_data, test_data):
+    def learn(self, word_idx_map, w2v, train_data, test_data, n_iter=100, batch_size=64, learning_rate=0.01):
         self.word_idx_map = word_idx_map
         self.w2v = tf.Variable(w2v, name='word_embedding')
         self.embedding_dim = w2v.shape[1]
@@ -485,7 +408,7 @@ class TD_LSTM(object):
 
         with tf.name_scope('train'):
             global_step = tf.Variable(0, name="tr_global_step", trainable=False)
-            optimizer = tf.train.AdamOptimizer(learning_rate=self.learning_rate).minimize(cost, global_step=global_step)
+            optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost, global_step=global_step)
 
         with tf.name_scope('predict'):
             correct_pred = tf.equal(tf.argmax(prob, 1), tf.argmax(self.y, 1))
@@ -501,55 +424,30 @@ class TD_LSTM(object):
 
             max_acc = 0.
 
-            def test_batch(x_fx, len_fx, x_bw, len_bw, y, batch_size, keep_prob):
+            def test(x_fx, len_fx, x_bw, len_bw, y, te_batch_size, keep_prob):
                 acc, loss, cnt = 0., 0., 0.
-                for test, num in self.get_batch_data(x_fx, len_fx, x_bw, len_bw, y, batch_size, keep_prob):
+                for test, num in self.get_batch_data(x_fx, len_fx, x_bw, len_bw, y, te_batch_size, keep_prob):
                     _loss, _acc = sess.run([cost, accuracy], feed_dict=test)
                     acc += _acc
                     loss += _loss * num
                     cnt += num
-                return acc, loss, cnt
+                return acc / cnt, loss / cnt
 
-            print('=' * 80 + '\nBefore training')
-            acc, loss, cnt = test_batch(tr_x_fw, tr_len_fw, tr_x_bw, tr_len_bw, tr_y, 1000, 0.5)
-            print('Train mini-batch loss={:.6f} - Train acc={:.6f}'.format(
-                loss / cnt, acc / cnt
-            ))
-                           
-            acc, loss, cnt = test_batch(te_x_fw, te_len_fw, te_x_bw, te_len_bw, te_y, 2000, 1.0)
+            tr_acc, tr_loss = test(tr_x_fw, tr_len_fw, tr_x_bw, tr_len_bw, tr_y, 1000, 0.5)
+            te_acc, te_loss = test(te_x_fw, te_len_fw, te_x_bw, te_len_bw, te_y, 2000, 1.0)
+            show_res(0, tr_loss, tr_acc, te_loss, te_acc)
 
-            print('Test mini-batch loss={:.6f} - Test acc={:.6f}'.format(
-                loss / cnt, acc / cnt
-            ))
-            for i in range(self.n_iter):
-                for train, _ in self.get_batch_data(tr_x_fw, tr_len_fw, tr_x_bw, tr_len_bw, tr_y, self.batch_size, 1.0):
+            for i in range(n_iter):
+                for train, _ in self.get_batch_data(tr_x_fw, tr_len_fw, tr_x_bw, tr_len_bw, tr_y, batch_size, 1.0):
                     sess.run([optimizer, global_step], feed_dict=train)
 
-                print('=' * 80 + '\nIter {0}:'.format(i + 1))
-                acc, loss, cnt = test_batch(tr_x_fw, tr_len_fw, tr_x_bw, tr_len_bw, tr_y, 1000, 0.5)
-                print('Train mini-batch loss={:.6f} - Train acc={:.6f}'.format(
-                    loss / cnt, acc / cnt
-                ))
-                
-                acc, loss, cnt = test_batch(te_x_fw, te_len_fw, te_x_bw, te_len_bw, te_y, 2000, 1.0)
+                tr_acc, tr_loss = test(tr_x_fw, tr_len_fw, tr_x_bw, tr_len_bw, tr_y, 1000, 0.5)
+                te_acc, te_loss = test(te_x_fw, te_len_fw, te_x_bw, te_len_bw, te_y, 2000, 1.0)
+                show_res(i + 1, tr_loss, tr_acc, te_loss, te_acc)
 
-                print('Test mini-batch loss={:.6f} - Test acc={:.6f}'.format(
-                    loss / cnt, acc / cnt
-                ))
-
-                if acc / cnt > max_acc:
-                    max_acc = acc / cnt
-                if acc / cnt > max_acc:
-                    max_acc = acc / cnt
+                if te_acc > max_acc:
+                    max_acc = te_acc
             print('Optimization Finished! Max acc={}'.format(max_acc))
-
-            print('Learning_rate={}, iter_num={}, batch_size={}, hidden_num={}, l2={}'.format(
-                self.learning_rate,
-                self.n_iter,
-                self.batch_size,
-                self.n_hidden,
-                self.l2_reg
-            ))
 
     def get_batch_data(self, x_fx, len_fw, x_bw, len_bw, y, batch_size, keep_prob):
         for index in batch_index(len(y), batch_size, 1):

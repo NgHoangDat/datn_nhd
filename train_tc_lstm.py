@@ -27,17 +27,19 @@ def main(_):
     te_revs, _ = read_data_file(FLAGS.test_file_path)
     te_data = data_parse(te_revs, word_idx_map, FLAGS.max_sentence_len)
 
-    tc_lstm = TC_LSTM(
-        batch_size=FLAGS.batch_size,
+    tc_lstm = TC_LSTM(        
         n_hidden=FLAGS.n_hidden,
-        learning_rate=FLAGS.learning_rate,
         n_class=FLAGS.n_class,
         max_sentence_len=FLAGS.max_sentence_len,
         l2_reg=FLAGS.l2_reg,
-        n_iter=FLAGS.n_iter
     )
     print('start training...')
-    tc_lstm.train(word_idx_map, w2v, tr_data, te_data)
+    tc_lstm.learn(
+        word_idx_map, w2v, tr_data, te_data,
+        n_iter=FLAGS.n_iter,
+        batch_size=FLAGS.batch_size,
+        learning_rate=FLAGS.learning_rate
+    )
 
 if __name__ == '__main__':
     tf.app.run()
