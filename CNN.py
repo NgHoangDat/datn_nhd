@@ -32,21 +32,55 @@ class Text_CNN(object):
             self.x = tf.placeholder(tf.int32, [None, max_len])
             self.y = tf.placeholder(tf.float32, [None, n_classes])
 
-    def predict(self, input):        
+    def predict(self, x, keep_prob=1.0):
+        saver = tf.train.Saver()
+
+        inputs = tf.nn.embedding_lookup(self.word_embedding, self.x)
+        score, prediction, _ = self._predict(inputs)
+
+        with tf.Session() as sess:
+            saver.restore(sess, self.save_path)
+            return sess.run([score, prediction], {
+                self.x: x, 
+                self.dropout_keep_prob: keep_prob
+            })
+
+
+    def _predict(self, inputs):        
         
-        if not (self.pooled_outputs):
-            raise Exception('The model needs training first')
+        
+        inputs = tf.expand_dims(inputs, -1)
+        pooled_outputs = []
+        for i, filter_h in enumerate(self.filter_hs):
+            with tf.variable_scope("conv-maxpool", reuse=tf.AUTO_REUSE):
+                filter_shape = [filter_h, self.embedding_dim, 1, self.n_filters]
+                W = tf.Variable(tf.truncated_normal(filter_shape, stddev=0.1), name='W')
+                b = tf.Variable(tf.constant(0.1, shape=[self.n_filters]), name='b')
+                conv = tf.nn.conv2d(
+                    inputs, W,
+                    strides=[1] * 4,
+                    padding='VALID',
+                    name='conv'
+                )
+                pooled = tf.nn.max_pool(
+                    tf.nn.relu(tf.nn.bias_add(conv, b), name="relu"),
+                    ksize=[1, self.max_len - filter_h + 1, 1, 1],
+                    strides=[1] * 4,
+                    padding='VALID',
+                    name='pool'
+                )
+                pooled_outputs.append(pooled)
+
 
         n_filters_total = self.n_filters * len(self.filter_hs)
-        h_pool = tf.concat(self.pooled_outputs, 3)
+        h_pool = tf.concat(pooled_outputs, 3)
         h_pool_flat = tf.reshape(h_pool, [-1, n_filters_total])
         l2_loss = tf.constant(0.0)
 
-        with tf.name_scope("dropout"):
+        with tf.variable_scope("dropout", reuse=tf.AUTO_REUSE):
            h_drop = tf.nn.dropout(h_pool_flat, self.dropout_keep_prob)
         
-        with tf.name_scope("output"):
-
+        with tf.variable_scope("output", reuse=tf.AUTO_REUSE):
             W = tf.get_variable(
                 "W",
                 shape=[n_filters_total, self.n_classes],
@@ -60,7 +94,7 @@ class Text_CNN(object):
         return scores, predictions, l2_loss
 
     def learn(
-        self, word_idx_map, word_embedding, train_data, test_data, 
+        self, word_idx_map, word_embedding, train_data, test_data, save_path,
         n_iters=10, batch_size=64, learning_rate=1e-3
     ):
 
@@ -68,40 +102,8 @@ class Text_CNN(object):
         self.word_embedding = tf.Variable(word_embedding)
         self.embedding_dim = word_embedding.shape[1]
 
-        with tf.name_scope("embedding"):
-            W = tf.Variable(
-                tf.random_uniform([
-                    len(self.word_idx_map) + 1, 
-                    self.embedding_dim
-                ], -1.0, 1.0, name='W')
-            )
-            embedded_chars_expanded = tf.expand_dims(
-                tf.nn.embedding_lookup(W, self.x), -1
-            )
-        
-        self.pooled_outputs = []
-        for i, filter_h in enumerate(self.filter_hs):
-            with tf.name_scope("conv-maxpool"):
-                filter_shape = [filter_h, self.embedding_dim, 1, self.n_filters]
-                W = tf.Variable(tf.truncated_normal(filter_shape, stddev=0.1), name='W')
-                b = tf.Variable(tf.constant(0.1, shape=[self.n_filters]), name='b')
-                conv = tf.nn.conv2d(
-                    embedded_chars_expanded, W,
-                    strides=[1] * 4,
-                    padding='VALID',
-                    name='conv'
-                )
-                pooled = tf.nn.max_pool(
-                    tf.nn.relu(tf.nn.bias_add(conv, b), name="relu"),
-                    ksize=[1, self.max_len - filter_h + 1, 1, 1],
-                    strides=[1] * 4,
-                    padding='VALID',
-                    name='pool'
-                )
-                self.pooled_outputs.append(pooled)
-
         inputs = tf.nn.embedding_lookup(self.word_embedding, self.x)
-        scores, predictions, l2_loss = self.predict(inputs)
+        scores, predictions, l2_loss = self._predict(inputs)
 
         with tf.name_scope("loss"):
             cost = tf.reduce_mean(
@@ -119,6 +121,7 @@ class Text_CNN(object):
                 learning_rate=learning_rate
             ).minimize(cost, global_step=global_step)
 
+        saver = tf.train.Saver()
         with tf.Session() as sess:
             tr_x, tr_y = train_data
             te_x, te_y = test_data
@@ -127,29 +130,28 @@ class Text_CNN(object):
             sess.run(init)
 
             max_acc = 0.0
-            def test(x, y, batch_size, keep_prob):
-                acc, loss, cnt = 0., 0., 0.
-                for test, num in self.get_batch_data(x, y, batch_size, keep_prob):
-                    _loss, _acc = sess.run([cost, accuracy], feed_dict=test)
-                    acc += _acc
-                    loss += _loss * num
-                    cnt += num
-                return acc / cnt, loss / cnt
+            def test(x, y, keep_prob):
+                acc, loss = sess.run([accuracy, cost], {
+                    self.x: x, self.y: y,
+                    self.dropout_keep_prob: keep_prob
+                })                
+                return acc / y.shape[0], loss / y.shape[0]
 
-            tr_acc, tr_loss = test(tr_x, tr_y, 1000, 0.5)
-            te_acc, te_loss = test(te_x, te_y, 1000, 0.5)
+            tr_acc, tr_loss = test(tr_x, tr_y, 1.0)
+            te_acc, te_loss = test(te_x, te_y, 1.0)
             show_res(0, tr_loss, tr_acc, te_loss, te_acc)
             
             for i in range(n_iters):
-                for train, _ in self.get_batch_data(tr_x, tr_y, batch_size, 1.0):
+                for train, _ in self.get_batch_data(tr_x, tr_y, batch_size, 0.5):
                     sess.run([optimizer, global_step], feed_dict=train)
                 
-                tr_acc, tr_loss = test(tr_x, tr_y, 1000, 0.5)
-                te_acc, te_loss = test(te_x, te_y, 1000, 0.5)
+                tr_acc, tr_loss = test(tr_x, tr_y, 1.0)
+                te_acc, te_loss = test(te_x, te_y, 1.0)
                 show_res(i + 1, tr_loss, tr_acc, te_loss, te_acc)
 
                 if te_acc > max_acc:
                     max_acc = te_acc
+                    self.save_path = saver.save(sess, save_path)
 
             print('Optimization Finished! Max acc={}'.format(max_acc))
 

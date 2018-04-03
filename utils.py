@@ -201,3 +201,23 @@ def batch_index(length, batch_size, n_iter=100, is_shuffle=True):
             np.random.shuffle(index)
         for i in range(int(length / batch_size) + (1 if length % batch_size else 0)):
             yield index[i * batch_size:(i + 1) * batch_size]
+
+def locate_keyword(sen, kws, ngram=4, tokenize=True):
+    sen = process_vi(sen).split() if vi else sen.split()
+    sen = [re.sub('_', ' ', w) for w in sen]
+    kws_idx = []
+    out_sen = []
+    i = 0
+    while i < len(sen):
+        for j in range(ngram, 0, -1):
+            pharse = ' '.join(sen[i:i + j])
+            if pharse in kws:
+                out_sen.append(pharse)
+                kws_idx.append(len(out_sen) - 1)
+                i += j
+                break
+            if j == 1:
+                out_sen.append(pharse)
+                i += 1                
+
+    return out_sen, kws_idx
