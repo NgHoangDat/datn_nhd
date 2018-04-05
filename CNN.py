@@ -40,6 +40,8 @@ class Text_CNN(object):
 
         with tf.Session() as sess:
             saver.restore(sess, self.save_path)
+            init = tf.global_variables_initializer()
+            sess.run(init)
             return sess.run([score, prediction], {
                 self.x: x, 
                 self.dropout_keep_prob: keep_prob

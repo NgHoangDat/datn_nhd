@@ -6,14 +6,37 @@ from collections import defaultdict
 import numpy as np
 from nltk.data import load
 from pyvi.pyvi import ViTokenizer
-
+from bs4 import BeautifulSoup
 from gensim.models import Word2Vec
 
 VN_SENT_MODEL = 'file:' + os.path.join(os.path.abspath(os.path.dirname(__file__)), 'vietnamese.pickle')
+RE_POPULAR_URI = re.compile("(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]",
+                            re.IGNORECASE | re.UNICODE)
+
+def clean_text(markup_content):
+    RE_POPULAR_URI = re.compile(r"(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]",
+                            re.IGNORECASE | re.UNICODE)
+    if RE_POPULAR_URI.match(markup_content):
+        return markup_content
+    soup = BeautifulSoup(markup_content, 'lxml')
+    
+    for script in soup(["script", "style"]):
+        script.extract()
+    
+    for tag in soup(['br']):
+        if tag:
+            tag.string = u"\n"
+
+    text = soup.text
+    text = re.sub('(\s*\\n\s*\n*)+', '.', text)
+    return text
 
 def normalize_text(text: str):
+    text = re.sub('\n', '.', text)
     text = re.sub('(?=[^\w|\s+])', ' ', text)
     text = re.sub('(?<=[^\w|\s])(?=\w+|\s+)', ' ', text)
+    text = re.sub('(?<=\d)\s*\.\s*(?=\d)', '', text)
+    text = re.sub('(\.\s*)+', ' . ', text)
     return re.sub('\s+', ' ', text).strip()
 
 
@@ -22,9 +45,12 @@ def separate_sentence(paragraph: str):
     return tokenizer.tokenize(paragraph)
 
 
-def tokenize_text(sentence: str):
-    return ViTokenizer.tokenize(sentence)
-    # return word_sent(sentence, format='text')
+def tokenize_text(sentence: str, format=None):
+    tokenized_text = ViTokenizer.tokenize(sentence) 
+    if format == 'list':
+        return [re.sub('_', ' ', w) for w in tokenized_text.split()]
+    else:
+        return tokenized_text
 
 
 def remove_punctuation(text: str):
@@ -33,6 +59,60 @@ def remove_punctuation(text: str):
 
 def lowercase(text: str):
     return text.lower()
+
+
+def join_text(tokens: list):
+    return ' '.join([re.sub(' ', '_', w) for w in tokens])
+
+def disjoin_text(text: str):
+    return [re.sub('_', ' ', w) for w in text.split()]
+
+
+def locate_keyword(sen, kws, ngram=4, tokenize=True):
+    sen = tokenize_text(sen, format='list') if tokenize else sen.split() 
+    kws_idx = []
+    out_sen = []
+    i = 0
+    while i < len(sen):
+        for j in range(ngram, 0, -1):
+            pharse = ' '.join(sen[i:i + j])
+            if pharse in kws:
+                out_sen.append(pharse)
+                kws_idx.append(len(out_sen) - 1)
+                i += j
+                break
+            if j == 1:
+                out_sen.append(pharse)
+                i += 1                
+
+    return out_sen, kws_idx
+
+
+def clause_seperate(paragraph, kws: list, islist=False):
+    paragraph = normalize_text(paragraph)
+    paragraph = lowercase(paragraph)
+    paragraph = separate_sentence(paragraph)
+    paragraph = [locate_keyword(sentence, kws) for sentence in paragraph]
+    clauses = []
+    kw_idx = []
+    i = len(paragraph)
+    while i > 0:
+        curr_clause, flag = [], False
+        for j in range(i - 1, -1, -1):
+            curr_clause = paragraph[j][0] + curr_clause
+            if len(paragraph[j][1]) > 0:
+                i, flag = j, True
+                kw_idx.insert(0, paragraph[j][1])
+                break
+        clauses.insert(0, curr_clause)
+    if not flag:
+        kw_idx[0] = [idx + len(clauses[0]) for idx in kw_idx[0]]
+        clauses[0] = clauses.pop(0) + clauses[0]
+    kws_found = [{clause[i] for i in idx} for clause, idx in list(zip(clauses, kw_idx))]
+    clauses = clauses if islist else [join_text(clause) for clause in clauses]
+    kws_found = kws_found if islist else [{re.sub(' ', '_', kw) for kw in kws} for kws in kws_found] 
+    return list(zip(clauses, kws_found))
+
 
 
 def create_word_vec(revs: list, dim=300, min_count=5):
@@ -80,7 +160,7 @@ def add_unknown_words(word_vecs, vocab, min_df=1, dim=300):
             word_vecs[word] = np.random.uniform(-0.25, 0.25, dim)
 
 
-def process_vi(text, processors=[normalize_text, lowercase, remove_punctuation, tokenize_text]):
+def process_vi(text, processors=[clean_text, normalize_text, lowercase, remove_punctuation, tokenize_text]):
     for processor in processors:
         text = processor(text)
     return text
@@ -202,22 +282,3 @@ def batch_index(length, batch_size, n_iter=100, is_shuffle=True):
         for i in range(int(length / batch_size) + (1 if length % batch_size else 0)):
             yield index[i * batch_size:(i + 1) * batch_size]
 
-def locate_keyword(sen, kws, ngram=4, tokenize=True):
-    sen = process_vi(sen).split() if vi else sen.split()
-    sen = [re.sub('_', ' ', w) for w in sen]
-    kws_idx = []
-    out_sen = []
-    i = 0
-    while i < len(sen):
-        for j in range(ngram, 0, -1):
-            pharse = ' '.join(sen[i:i + j])
-            if pharse in kws:
-                out_sen.append(pharse)
-                kws_idx.append(len(out_sen) - 1)
-                i += j
-                break
-            if j == 1:
-                out_sen.append(pharse)
-                i += 1                
-
-    return out_sen, kws_idx
